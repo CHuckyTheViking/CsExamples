@@ -13,26 +13,27 @@ namespace C16_WorkerService
     {
 
         private readonly ILogger<Worker> _logger;
-        private HttpClient client;
-        private string url = "https://google.com";
-        private HttpResponseMessage result;
+        private readonly string _url = "https://google.com";
+
+        private HttpClient _client;
+        private HttpResponseMessage _result;
 
 
         public Worker(ILogger<Worker> logger)
         {
             _logger = logger;
-           
         }
 
         public override Task StartAsync(CancellationToken cancellationToken)
         {
-            client = new HttpClient();
+            _client = new HttpClient();
             _logger.LogInformation("The service has been started.");
             return base.StartAsync(cancellationToken);
         }
 
         public override Task StopAsync(CancellationToken cancellationToken)
         {
+            _client.Dispose();
             _logger.LogInformation("The service has been stopped.");
             return base.StopAsync(cancellationToken);
         }
@@ -43,20 +44,19 @@ namespace C16_WorkerService
             {
                 try
                 {
-                    result = await client.GetAsync(url);
-                    if (result.IsSuccessStatusCode)
-                        _logger.LogInformation($"The website ({url}) is up. Status Code = {result.StatusCode}");
+                    _result = await _client.GetAsync(_url);
+                    if (_result.IsSuccessStatusCode)
+                        _logger.LogInformation($"The website ({_url}) is up. Status Code = {_result.StatusCode}");
                     else
-                        _logger.LogInformation($"The website ({url}) us down. Status Code = {result.StatusCode}");
+                        _logger.LogInformation($"The website ({_url}) us down. Status Code = {_result.StatusCode}");
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogInformation($"Failed. The website ({url}) - {ex.Message}");
-                    
+                    _logger.LogInformation($"Failed. The website ({_url}) - {ex.Message}");
                 }
                 
 
-                await Task.Delay(5*1000, stoppingToken);
+                await Task.Delay(10*1000, stoppingToken);
             }
         }
     }

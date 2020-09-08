@@ -1,0 +1,7 @@
+2020-09-08 13:51:35.734 +02:00 [INF] Starting WorkerService...
+2020-09-08 13:51:35.962 +02:00 [INF] The service has been started.
+2020-09-08 13:51:36.277 +02:00 [INF] The website (https://google.com) is up. Status Code = OK
+2020-09-08 13:51:46.358 +02:00 [INF] The website (https://google.com) is up. Status Code = OK
+2020-09-08 13:51:56.448 +02:00 [INF] The website (https://google.com) is up. Status Code = OK
+2020-09-08 13:52:06.528 +02:00 [INF] The website (https://google.com) is up. Status Code = OK
+2020-09-08 13:52:07.243 +02:00 [INF] The service has been stopped.
