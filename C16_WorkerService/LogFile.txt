@@ -5,3 +5,7 @@
 2020-09-08 13:51:56.448 +02:00 [INF] The website (https://google.com) is up. Status Code = OK
 2020-09-08 13:52:06.528 +02:00 [INF] The website (https://google.com) is up. Status Code = OK
 2020-09-08 13:52:07.243 +02:00 [INF] The service has been stopped.
+2020-09-08 14:29:30.867 +02:00 [INF] Starting WorkerService...
+2020-09-08 14:29:31.376 +02:00 [INF] The service has been started.
+2020-09-08 14:29:32.493 +02:00 [INF] The website (https://google.com) is up. Status Code = OK
+2020-09-08 14:29:35.443 +02:00 [INF] The service has been stopped.
